@@ -25,6 +25,12 @@ class InformationsController extends AbstractController
         $response=$serializer->serialize($info,'json');
         return new JsonResponse($response,Response::HTTP_OK, [], true);
     }
+    
+    #[Route('', name: 'app_launch')]
+    public function launch()
+    { 
+        return "I'm Ok , i can run";
+    }
 
 
     #[Route('api/informations/update/{id}', name: 'update_informations')]

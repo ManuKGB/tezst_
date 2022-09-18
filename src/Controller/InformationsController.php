@@ -27,7 +27,7 @@ class InformationsController extends AbstractController
     }
     
     #[Route('', name: 'app_launch')]
-    public function launch()
+    public function launch():string
     { 
         return "I'm Ok , i can run";
     }

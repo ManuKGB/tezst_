@@ -27,9 +27,14 @@ class InformationsController extends AbstractController
     }
     
     #[Route('', name: 'app_launch')]
-    public function launch():JsonResponse
+    public function launch(
+    InformationsRepository $infoRepo,
+    SerializerInterface $serializer
+    ):JsonResponse
     { 
-        return new JsonResponse("OK",Response::HTTP_OK, [], true);
+          $info=$infoRepo->findAll();
+        $response=$serializer->serialize($info,'json');
+        return new JsonResponse($response,Response::HTTP_OK, [], true);
     }
 
 

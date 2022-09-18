@@ -27,9 +27,9 @@ class InformationsController extends AbstractController
     }
     
     #[Route('', name: 'app_launch')]
-    public function launch():string
+    public function launch():JsonResponse
     { 
-        return "I'm Ok , i can run";
+        return new JsonResponse("OK",Response::HTTP_OK, [], true);
     }
 
 

@@ -49,6 +49,9 @@ class Informations
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $introText6 = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $proms = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -194,6 +197,18 @@ class Informations
     public function setIntroText6(?string $introText6): self
     {
         $this->introText6 = $introText6;
+
+        return $this;
+    }
+
+    public function getProms(): ?string
+    {
+        return $this->proms;
+    }
+
+    public function setProms(?string $proms): self
+    {
+        $this->proms = $proms;
 
         return $this;
     }
